@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\chaco\\Desktop\\blockchain-event-indexer\\contracts\\StakeTracker.sol": {
+      "lastModificationDate": 1751050013389,
+      "contentHash": "79bd1b9ed0023a10d6a34db60230ab51",
+      "sourceName": "contracts/StakeTracker.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.8.21"
+      ],
+      "artifacts": [
+        "StakeTracker"
+      ]
+    }
+  }
+}
