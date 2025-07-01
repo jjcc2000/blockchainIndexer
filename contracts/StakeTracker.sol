@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.21;
+pragma solidity 0.8.28;
 
 contract StakeTracker {
-    constructor() {}
-
     event Stake(address indexed staker, uint256 amount);
     event Unstake(address indexed staker, uint256 amount);
 
@@ -15,10 +13,10 @@ contract StakeTracker {
         emit Stake(msg.sender, msg.value);
     }
 
-    function unStake(uint256 amount) external {
-        require(stakes[msg.sender] >= amount, "Insuficient Stae");
+    function unstake(uint256 amount) external {
+        require(stakes[msg.sender] >= amount, "Insuficient Stake");
         stakes[msg.sender] -= amount;
         payable(msg.sender).transfer(amount);
         emit Unstake(msg.sender, amount);
-    }
+    }   
 }
