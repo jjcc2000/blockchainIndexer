@@ -1,0 +1,39 @@
+A real-time blockchain indexer that monitors a smart contract ,capturing events and saving them to a PostgreSQL database
+
+* Ultra-fast response: Reacts to contract events in ~200ms
+
+* Persistent storage: Uses a Dockerized PostgreSQL database with volume for data persistence
+
+Ideal for building dashboards, analytics platforms, or any dApp that requires reliable on-chain event tracking.
+
+To run the container with the database
+
+`docker-compose up -d`
+
+To connect to the container and interact with the database
+
+`docker exec -it stake_event_db psql -U indexer -d event_db`
+
+The listener.ts has to be running so it can connect to the database and save the data.
+
+This Solidity contract was built and deployed with Hardhat
+
+To verify and  publish the contract use this command
+    
+`npx hardhat verify --network <NAME_OF_THE_NETWORK> <DEPLOYED_CONTRACT_ADDRESS>`
+
+Instructions:
+
+In the hardhat.config.js 
+module.exports = {
+  networks: {
+    sepolia: {
+      url: process.env.SEPOLIA_RPC_URL, // Replace with your chosen network's RPC URL
+      accounts: [process.env.PRIVATE_KEY], // Your private key for signing 
+    }
+    // You can add other networks here
+  },
+  etherscan: {
+    apiKey: process.env.ETHERSCAN_APIKEY, // Required for verifying your contract on Etherscan, enabling global interaction.
+  },
+}

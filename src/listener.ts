@@ -15,11 +15,15 @@ console.log("🎧 Listening for events....");
 
 
 contract.on("Stake", async (staker, amount, event) => {
-    console.log(`Stake ${staker} staked ${amount.toString()}`);
+
+    const txHash = event.log.transactionHash;
+    const blockNumber = event.log.blockNumber
+    console.log(txHash, blockNumber);
+    console.log(`\nStake ${staker} staked ${amount.toString()}`);
     await db.query(`INSERT INTO stake_events (staker, amount, tx_hash, block_number)
      VALUES ($1, $2, $3, $4)
      ON CONFLICT (tx_hash) DO NOTHING`,
-        [staker, amount.toString(), event.transactionHash, event.blockNumber])
+        [staker, amount.toString(), txHash, blockNumber])
 
 })
 

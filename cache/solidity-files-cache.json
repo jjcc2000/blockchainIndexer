@@ -2,17 +2,17 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\chaco\\Desktop\\blockchain-event-indexer\\contracts\\StakeTracker.sol": {
-      "lastModificationDate": 1751335175748,
+      "lastModificationDate": 1751374865104,
       "contentHash": "0c81be8621b96c5f5af86ff882e5b4a5",
       "sourceName": "contracts/StakeTracker.sol",
       "solcConfig": {
         "version": "0.8.28",
         "settings": {
-          "evmVersion": "paris",
           "optimizer": {
             "enabled": false,
             "runs": 200
           },
+          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
